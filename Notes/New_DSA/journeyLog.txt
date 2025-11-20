@@ -1,0 +1,973 @@
+# **DAY 1 JOURNAL ENTRY** 📝
+
+---
+
+## **Date:** Tuesday, November 19, 2025
+
+## **Week:** DSA Week 1 - Day 1/6
+
+## **Time Spent:** 2 hours
+
+---
+
+## **📚 TOPIC COVERED:**
+**Big O Notation (Time & Space Complexity)**
+
+---
+
+## **📖 RESOURCES USED:**
+
+1. **Grokking Algorithms** - Big O chapter (10 pages)
+2. **Greg Hogg** - Big O Notation lecture
+3. **LeetCode** - Practice problems
+
+---
+
+## **✅ PROBLEMS SOLVED:**
+
+### **Problem 1: LeetCode #2239 - Find Closest Number to Zero**
+- **Difficulty:** Easy
+- **Link:** https://leetcode.com/problems/find-closest-number-to-zero/
+
+**Problem Summary:**
+Given an integer array nums, return the number closest to 0. If there are multiple answers, return the number with the largest value.
+
+**My Experience:**
+- ⏰ This was a struggle at first
+- 💡 Eventually figured out the logic after drawing it out
+- 🔄 Retried the problem later - solved it in ~3 minutes!
+- ✅ This showed I actually understood it
+
+**Approach:**
+- Track the closest number to zero while iterating
+- Handle tie-breaking (larger positive value wins)
+- Compare absolute values
+
+**Complexity:**
+- Time: O(n) - single pass through array
+- Space: O(1) - only tracking one variable
+
+**Key Learning:**
+- Breaking down the problem step-by-step helps
+- Retrying problems shows true understanding
+- Drawing out test cases makes logic clearer
+
+**Status:** ✅ Solved (with initial struggle, then mastered)
+
+---
+
+## **💡 KEY LEARNINGS:**
+
+### **1. Big O Notation Fundamentals**
+
+**Time Complexity - Common Types:**
+- **O(1)** - Constant time
+  - Example: Accessing array element by index
+  - Same time regardless of input size
+  
+- **O(log n)** - Logarithmic time
+  - Example: Binary search
+  - Cuts problem in half each time
+  
+- **O(n)** - Linear time
+  - Example: Loop through array once
+  - Time grows proportional to input size
+  
+- **O(n log n)** - Linearithmic time
+  - Example: Efficient sorting (merge sort, quick sort)
+  - Common in divide-and-conquer algorithms
+  
+- **O(n²)** - Quadratic time
+  - Example: Nested loops checking all pairs
+  - Time grows with square of input size
+  - Usually TOO SLOW for large inputs
+
+**Speed Ranking (Fastest to Slowest):**
+```
+O(1) > O(log n) > O(n) > O(n log n) > O(n²) > O(2^n) > O(n!)
+⚡     ⚡⚡       ⚡⚡⚡    🔥          🐌        🐢      🦥
+```
+
+### **2. Space Complexity**
+
+**How much extra memory does algorithm use?**
+
+- **O(1)** - Constant space
+  - Only use a few variables
+  - Best for memory efficiency
+  
+- **O(n)** - Linear space
+  - Store data proportional to input size
+  - Example: Creating a hash set from array
+
+### **3. Best/Average/Worst Case**
+
+**Different scenarios affect performance:**
+- **Best case:** Most favorable input
+- **Average case:** Typical input (most common)
+- **Worst case:** Most unfavorable input (what we usually analyze)
+
+### **4. Why Big O Matters**
+
+**Example with n = 100,000:**
+- O(n) = 100,000 operations ✅ Fast
+- O(n²) = 10,000,000,000 operations ❌ TOO SLOW!
+
+**For coding interviews:**
+- Must explain time/space complexity of solutions
+- Shows you understand algorithm efficiency
+- Helps choose between multiple approaches
+
+---
+
+## **📊 VISUAL UNDERSTANDING:**
+
+### **Comparing Algorithm Speeds:**
+```
+Input size: 1000 elements
+
+O(1):      1 operation         ⚡ Instant
+O(log n):  10 operations       ⚡ Very fast
+O(n):      1,000 operations    ⚡ Fast
+O(n log n): 10,000 operations  🔥 Acceptable
+O(n²):     1,000,000 operations 🐌 Slow
+```
+
+---
+
+## **🎯 PRACTICAL EXAMPLES:**
+
+### **O(1) - Constant Time:**
+```python
+def get_first_element(array):
+    return array[0]  # Always same time
+```
+
+### **O(n) - Linear Time:**
+```python
+def sum_array(array):
+    total = 0
+    for num in array:  # Loop through all elements
+        total += num
+    return total
+```
+
+### **O(n²) - Quadratic Time:**
+```python
+def has_duplicate_slow(array):
+    # Check every element against every other element
+    for i in range(len(array)):
+        for j in range(len(array)):
+            if i != j and array[i] == array[j]:
+                return True
+    return False
+```
+
+---
+
+## **🔖 KEY CONCEPTS TO REMEMBER:**
+
+1. **Drop constants:** O(2n) → O(n)
+   - Big O cares about growth rate, not exact operations
+
+2. **Drop lower terms:** O(n² + n) → O(n²)
+   - Highest term dominates for large inputs
+
+3. **Different inputs = different variables:**
+   - Two arrays: O(a + b), not O(n)
+   - Nested loops on same array: O(n²)
+
+4. **Best approach:** Usually O(n) or O(n log n) for interviews
+   - O(n²) solutions often get follow-up: "Can you optimize?"
+
+---
+
+## **❓ QUESTIONS I HAD:**
+
+**Q: Why do we ignore constants?**
+A: Big O describes growth rate as input gets large. O(2n) and O(n) both grow linearly, so we simplify to O(n).
+
+**Q: Is O(n²) always bad?**
+A: Not for small inputs, but for large inputs (n > 1000), it becomes too slow. Interviews usually expect better.
+
+**Q: How do I know the complexity of my code?**
+A: 
+- One loop: O(n)
+- Nested loops: O(n²)
+- Divide input in half: O(log n)
+- Hash table lookup: O(1)
+
+---
+
+## **💭 REFLECTIONS:**
+
+**What went well:**
+- Understood Big O fundamentals
+- Solved first LeetCode problem (even though it was tough!)
+- Learned to retry problems to confirm understanding
+
+**What was challenging:**
+- Problem #2239 took longer than expected
+- Struggled to see the solution at first
+- Had to think through the logic carefully
+
+**Breakthrough moment:**
+- When I retried #2239 and solved it in 3 minutes!
+- Realized that struggling → understanding → speed is the learning process
+
+**Mindset:**
+- It's okay to struggle on the first attempt
+- The goal is understanding, not just solving quickly
+- Retrying problems shows real learning happened
+
+---
+
+## **📝 CODE SNIPPET TO REMEMBER:**
+
+### **Problem #2239 Solution Structure:**
+```python
+def findClosestNumber(nums):
+    """
+    Find closest number to zero.
+    If tie, return larger positive value.
+    
+    Time: O(n)
+    Space: O(1)
+    """
+    closest = nums[0]
+    
+    for num in nums:
+        # Check if current number is closer to zero
+        if abs(num) < abs(closest):
+            closest = num
+        # Handle tie: choose positive number
+        elif abs(num) == abs(closest):
+            closest = max(num, closest)
+    
+    return closest
+```
+
+---
+
+## **🎯 TOMORROW'S PLAN:**
+
+**Day 2 - Arrays:**
+1. Read Grokking (10 pages on Arrays)
+2. Watch Greg Hogg's Arrays lecture (Static/Dynamic)
+3. Solve 1-2 array problems on LeetCode
+4. Apply Big O analysis to solutions
+
+**Goal:** Understand array operations and their complexity
+
+---
+
+## **📈 PROGRESS TRACKING:**
+
+**Week 1 Status:**
+- ✅ Day 1: Big O notation + 1 problem
+- ⏳ Day 2: Arrays (tomorrow)
+- ⏳ Day 3: Dynamic Arrays
+- ⏳ Day 4: Strings
+- ⏳ Day 5: Practice
+- ⏳ Day 6: Review
+
+**Total Problems Solved:** 1/7 for Week 1
+
+**Confidence Level:** 😊 Learning! (Big O makes sense, ready for more problems)
+
+---
+
+## **✨ QUOTE TO REMEMBER:**
+
+*"The expert in anything was once a beginner who refused to give up."*
+
+Today I struggled with my first problem, but I solved it. That's progress! 💪
+
+---
+
+## **🔖 BOOKMARKS ADDED:**
+
+- Big O Cheat Sheet: https://www.bigocheatsheet.com/
+- LeetCode problem list
+- Greg Hogg's YouTube channel
+
+---
+
+## **📊 COMPLEXITY CHEAT SHEET (For Reference):**
+
+| Data Structure | Access | Search | Insert | Delete |
+|---------------|--------|--------|--------|--------|
+| Array | O(1) | O(n) | O(n) | O(n) |
+| Hash Table | - | O(1) | O(1) | O(1) |
+| Binary Search Tree | O(log n) | O(log n) | O(log n) | O(log n) |
+| Stack/Queue | - | O(n) | O(1) | O(1) |
+
+| Algorithm | Time Complexity | Space |
+|-----------|----------------|-------|
+| Binary Search | O(log n) | O(1) |
+| Merge Sort | O(n log n) | O(n) |
+| Quick Sort | O(n log n) avg | O(log n) |
+| Bubble Sort | O(n²) | O(1) |
+
+---
+
+**END OF DAY 1 LOG** ✅
+
+---
+
+## **NOTES FOR FUTURE ME:**
+
+- Big O is about **growth rate**, not exact operations
+- **Struggle is part of learning** - don't give up too quickly
+- **Retry problems** to confirm understanding
+- **Draw out examples** when stuck
+- Focus on **understanding patterns**, not memorizing solutions
+
+**Keep going! This is just the beginning!** 🚀
+
+---
+
+
+# **DAY 2 JOURNAL ENTRY** 📝
+
+---
+
+## **Date:** Wednesday, [Today's Date]
+
+## **Week:** DSA Week 1 - Day 2/6
+
+## **Time Spent:** 2 hours
+
+---
+
+## **📚 TOPIC COVERED:**
+**Arrays - Tracking Min/Max Pattern**
+
+---
+
+## **📖 RESOURCES USED:**
+
+1. **Grokking Algorithms** - Arrays chapter (10 pages)
+2. **Greg Hogg** - Arrays lecture (Static/Dynamic arrays)
+3. **LeetCode** - Practice problems
+
+---
+
+## **✅ PROBLEMS SOLVED:**
+
+### **Problem 1: LeetCode #217 - Contains Duplicate**
+- **Difficulty:** Easy
+- **Link:** https://leetcode.com/problems/contains-duplicate/
+
+**Approach:**
+- Used hash set for O(1) lookup
+- Loop through array once, check if number seen before
+- If seen, return True; else add to set
+
+**Code:**
+```python
+def has_duplicate(nums):
+    seen = set()
+    for num in nums:
+        if num in seen:
+            return True
+        seen.add(num)
+    return False
+```
+
+**Complexity:**
+- Time: O(n) - single pass through array
+- Space: O(n) - storing up to n elements in set
+
+**Key Learning:**
+- When to use set vs dictionary vs list
+- Sets are perfect for "have I seen this?" problems
+- Hash tables provide O(1) lookup time
+
+**Status:** ✅ Solved (reviewed from yesterday)
+
+---
+
+### **Problem 2: LeetCode #121 - Best Time to Buy and Sell Stock** ⭐
+- **Difficulty:** Easy
+- **Link:** https://leetcode.com/problems/best-time-to-buy-and-sell-stock/
+
+**Problem Summary:**
+Given array of stock prices, find maximum profit from one buy + one sell transaction.
+
+**My Approach:**
+1. Track minimum price seen so far (best time to buy)
+2. For each price, calculate profit if selling today
+3. Keep track of maximum profit
+4. Return max profit (or 0 if no profit possible)
+
+**Initial Attempt:**
+- ❌ Had issues with loop indexing
+- ❌ Used `else: return 0` which exited early
+- ✅ Fixed after debugging logic on paper
+
+**Final Code:**
+```python
+def best_sell(prices):
+    min_price = prices[0]
+    max_profit = 0
+    
+    for price in prices:
+        if price < min_price:
+            min_price = price
+        
+        today_profit = price - min_price
+        if today_profit > max_profit:
+            max_profit = today_profit
+    
+    return max_profit
+```
+
+**Complexity:**
+- Time: O(n) - single pass through array
+- Space: O(1) - only two variables
+
+**Test Cases:**
+```python
+# Test 1
+prices = [7,1,5,3,6,4]
+# Expected: 5 (buy at 1, sell at 6)
+# Result: 5 ✅
+
+# Test 2  
+prices = [7,6,4,3,1]
+# Expected: 0 (no profit possible)
+# Result: 0 ✅
+```
+
+**Status:** ✅ **SOLVED WITHOUT LOOKING AT SOLUTION!** 🎉
+
+---
+
+## **💡 KEY LEARNINGS:**
+
+### **1. New Pattern Learned: Min/Max Tracking**
+When you need to find optimal value while iterating:
+- Track minimum/maximum seen so far
+- Calculate current result based on tracked value
+- Update best result as you go
+
+**This pattern applies to:**
+- Stock problems
+- Subarray problems
+- Container/water problems
+
+### **2. Problem-Solving Process:**
+```
+Step 1: Understand problem deeply
+Step 2: Think of approach (even if wrong!)
+Step 3: Write pseudocode on paper
+Step 4: Code it up
+Step 5: Debug logic (not just syntax)
+Step 6: Fix and solve
+```
+
+### **3. Data Structure Selection:**
+- **Set:** When checking existence (O(1) lookup)
+- **List:** When order matters or need indexing
+- **Dict:** When storing key-value pairs
+
+### **4. When to Use O(1) Space:**
+- Don't need to store all values
+- Just tracking min/max/count
+- Can calculate on-the-fly
+
+---
+
+## **🎯 BREAKTHROUGH MOMENT:**
+
+**Today I solved problem #121 WITHOUT looking at the solution!**
+
+**What I did right:**
+- ✅ Struggled for 30+ minutes
+- ✅ Used paper to work through logic
+- ✅ Debugged my own approach
+- ✅ Asked for hints, not answers
+- ✅ Fixed it myself
+
+**Why this matters:**
+- This is REAL learning, not memorization
+- I can now apply this pattern to similar problems
+- Building actual problem-solving skills
+
+---
+
+## **❌ MISTAKES MADE & FIXED:**
+
+### **Mistake 1: Array Indexing**
+```python
+# Wrong:
+for price in range(prices[i], b):
+
+# Fixed:
+for price in prices:
+```
+**Lesson:** Keep loops simple, iterate through actual values
+
+### **Mistake 2: Early Return**
+```python
+# Wrong:
+if today_profit > max_profit:
+    max_profit = today_profit
+else:
+    return 0  # Exits too early!
+
+# Fixed:
+if today_profit > max_profit:
+    max_profit = today_profit
+# Continue to next iteration
+```
+**Lesson:** Don't return early in loops unless necessary
+
+---
+
+## **📊 PROGRESS TRACKING:**
+
+**Week 1 Status:**
+- ✅ Day 1: Big O notation + 1 problem
+- ✅ Day 2: Arrays + 2 problems  
+- ⏳ Day 3: Dynamic Arrays (tomorrow)
+- ⏳ Day 4: Strings (Friday)
+- ⏳ Day 5: Practice (Saturday)
+- ⏳ Day 6: Review (Sunday)
+
+**Total Problems Solved:** 3/7 for Week 1
+
+**Confidence Level:** 📈 Growing! (Can solve Easy problems with guidance)
+
+---
+
+## **🔖 BOOKMARKS ADDED:**
+
+- LeetCode Arrays tag: https://leetcode.com/tag/array/
+- Python set operations documentation
+- Min/Max tracking pattern article
+
+---
+
+## **💭 REFLECTIONS:**
+
+**What went well:**
+- Solved a problem independently!
+- Used systematic approach (paper → pseudocode → code)
+- Didn't give up when first attempt failed
+- Understood WHY solution works, not just HOW
+
+**What to improve:**
+- Speed up problem-solving (took longer than ideal)
+- Practice more to recognize patterns faster
+- Get better at edge cases
+
+**Mindset shift:**
+- Learning > Completing problems
+- Struggling = Growth
+- Asking for hints (not solutions) = Smart learning
+
+---
+
+## **📝 CODE SNIPPETS TO REMEMBER:**
+
+### **Pattern: Checking Duplicates**
+```python
+seen = set()
+for item in array:
+    if item in seen:
+        return True
+    seen.add(item)
+return False
+```
+
+### **Pattern: Min/Max Tracking**
+```python
+min_val = array[0]
+max_result = 0
+
+for val in array:
+    min_val = min(min_val, val)
+    current_result = calculate(val, min_val)
+    max_result = max(max_result, current_result)
+
+return max_result
+```
+
+---
+
+## **🎯 TOMORROW'S PLAN:**
+
+**Day 3 - Dynamic Arrays:**
+1. Read Grokking (10 pages on dynamic arrays)
+2. Watch Greg Hogg's Dynamic Arrays lecture
+3. Solve 1 problem using same approach:
+   - Think first (30 min)
+   - Use paper/pseudocode
+   - Code it up
+   - Debug myself
+
+**Goal:** Solve independently again!
+
+---
+
+## **✨ QUOTE OF THE DAY:**
+
+*"The struggle you're in today is developing the strength you need for tomorrow."*
+
+Today I struggled, and I solved it. That's real progress! 💪
+
+---
+
+**END OF DAY 2 LOG** ✅
+
+---
+
+---
+
+# **WELL-DOCUMENTED CODE SOLUTIONS** 💻
+
+---
+
+## **Problem 1: Contains Duplicate**
+
+```python
+"""
+LeetCode #217: Contains Duplicate
+Difficulty: Easy
+Topic: Arrays, Hash Table
+
+Problem:
+Given an integer array nums, return true if any value appears 
+at least twice in the array, and return false if every element is distinct.
+
+Examples:
+    Input: nums = [1,2,3,1]
+    Output: true
+    
+    Input: nums = [1,2,3,4]
+    Output: false
+
+Constraints:
+    - 1 <= nums.length <= 10^5
+    - -10^9 <= nums[i] <= 10^9
+"""
+
+class Solution:
+    def containsDuplicate(self, nums: list[int]) -> bool:
+        """
+        Check if array contains any duplicates using a hash set.
+        
+        Approach:
+        1. Use a set to track numbers we've seen
+        2. For each number:
+           - If already in set, we found a duplicate → return True
+           - If not in set, add it and continue
+        3. If we finish loop without finding duplicates → return False
+        
+        Time Complexity: O(n) where n is length of nums
+            - We iterate through array once
+            - Set lookup and insertion are O(1) operations
+            
+        Space Complexity: O(n)
+            - In worst case (no duplicates), we store all n elements in set
+            
+        Args:
+            nums: List of integers to check for duplicates
+            
+        Returns:
+            bool: True if duplicates exist, False otherwise
+        """
+        # Initialize empty set to track seen numbers
+        seen = set()
+        
+        # Iterate through each number in the array
+        for num in nums:
+            # Check if we've seen this number before
+            if num in seen:
+                # Found a duplicate!
+                return True
+            
+            # Haven't seen this number yet, add it to our set
+            seen.add(num)
+        
+        # Finished checking all numbers, no duplicates found
+        return False
+
+
+# Alternative Solution: One-liner using Python's set properties
+class SolutionAlternative:
+    def containsDuplicate(self, nums: list[int]) -> bool:
+        """
+        One-liner solution using set length comparison.
+        
+        If converting to set removes elements, there were duplicates.
+        
+        Time Complexity: O(n)
+        Space Complexity: O(n)
+        """
+        # If lengths differ, duplicates were removed when converting to set
+        return len(nums) != len(set(nums))
+
+
+# Test cases
+if __name__ == "__main__":
+    solution = Solution()
+    
+    # Test 1: Has duplicates
+    test1 = [1, 2, 3, 1]
+    print(f"Test 1: {test1}")
+    print(f"Result: {solution.containsDuplicate(test1)}")  # Expected: True
+    print()
+    
+    # Test 2: No duplicates
+    test2 = [1, 2, 3, 4]
+    print(f"Test 2: {test2}")
+    print(f"Result: {solution.containsDuplicate(test2)}")  # Expected: False
+    print()
+    
+    # Test 3: All same elements
+    test3 = [1, 1, 1, 1]
+    print(f"Test 3: {test3}")
+    print(f"Result: {solution.containsDuplicate(test3)}")  # Expected: True
+    print()
+    
+    # Test 4: Single element (no duplicates possible)
+    test4 = [1]
+    print(f"Test 4: {test4}")
+    print(f"Result: {solution.containsDuplicate(test4)}")  # Expected: False
+```
+
+---
+
+## **Problem 2: Best Time to Buy and Sell Stock**
+
+```python
+"""
+LeetCode #121: Best Time to Buy and Sell Stock
+Difficulty: Easy
+Topic: Arrays, Dynamic Programming
+
+Problem:
+You are given an array prices where prices[i] is the price of a given 
+stock on the ith day.
+
+You want to maximize your profit by choosing a single day to buy one stock 
+and choosing a different day in the future to sell that stock.
+
+Return the maximum profit you can achieve from this transaction. 
+If you cannot achieve any profit, return 0.
+
+Examples:
+    Input: prices = [7,1,5,3,6,4]
+    Output: 5
+    Explanation: Buy on day 2 (price = 1) and sell on day 5 (price = 6), 
+                 profit = 6-1 = 5.
+    
+    Input: prices = [7,6,4,3,1]
+    Output: 0
+    Explanation: No profit possible, prices only decrease.
+
+Constraints:
+    - 1 <= prices.length <= 10^5
+    - 0 <= prices[i] <= 10^4
+"""
+
+class Solution:
+    def maxProfit(self, prices: list[int]) -> int:
+        """
+        Find maximum profit from buying and selling stock once.
+        
+        Approach (Min/Max Tracking Pattern):
+        1. Track the minimum price seen so far (best time to buy)
+        2. For each day:
+           a. Update minimum price if current is lower
+           b. Calculate profit if we sold today (current - min)
+           c. Update max profit if today's profit is better
+        3. Return maximum profit found
+        
+        Key Insight:
+        - We want to buy at lowest price and sell at highest price AFTER it
+        - By tracking minimum and checking profit at each step, we ensure
+          we're always selling after buying
+        
+        Time Complexity: O(n) where n is length of prices
+            - Single pass through the array
+            - Constant time operations in loop
+            
+        Space Complexity: O(1)
+            - Only use two variables (min_price, max_profit)
+            - No additional data structures needed
+            
+        Args:
+            prices: List of stock prices by day
+            
+        Returns:
+            int: Maximum profit possible, or 0 if no profit can be made
+        """
+        # Edge case: Can't trade with less than 2 days
+        if len(prices) < 2:
+            return 0
+        
+        # Initialize minimum price to first day's price
+        # This is the cheapest we can buy initially
+        min_price = prices[0]
+        
+        # Initialize max profit to 0
+        # If no profitable trade exists, we return 0
+        max_profit = 0
+        
+        # Iterate through all prices starting from day 1
+        # (We already processed day 0 as our initial min_price)
+        for price in prices[1:]:
+            # Check if today's price is cheaper than our tracked minimum
+            # If so, update our minimum (better buy opportunity)
+            if price < min_price:
+                min_price = price
+            
+            # Calculate profit if we bought at min_price and sold today
+            today_profit = price - min_price
+            
+            # Update max profit if today's profit is better
+            # than our best profit so far
+            if today_profit > max_profit:
+                max_profit = today_profit
+        
+        # Return the maximum profit we found
+        return max_profit
+    
+    
+    def maxProfitCleaner(self, prices: list[int]) -> int:
+        """
+        Alternative cleaner implementation using built-in min/max functions.
+        
+        Same logic, more Pythonic code.
+        """
+        min_price = prices[0]
+        max_profit = 0
+        
+        for price in prices:
+            # Update minimum price
+            min_price = min(min_price, price)
+            
+            # Calculate and update max profit in one line
+            max_profit = max(max_profit, price - min_price)
+        
+        return max_profit
+
+
+# Test cases with detailed walkthrough
+if __name__ == "__main__":
+    solution = Solution()
+    
+    print("=" * 60)
+    print("Test 1: Profitable trades exist")
+    print("=" * 60)
+    test1 = [7, 1, 5, 3, 6, 4]
+    print(f"Prices: {test1}")
+    print(f"\nWalkthrough:")
+    print(f"Day 1 (price=7): min=7, profit=0, max_profit=0")
+    print(f"Day 2 (price=1): min=1, profit=0, max_profit=0")
+    print(f"Day 3 (price=5): min=1, profit=4, max_profit=4")
+    print(f"Day 4 (price=3): min=1, profit=2, max_profit=4")
+    print(f"Day 5 (price=6): min=1, profit=5, max_profit=5 ← Best!")
+    print(f"Day 6 (price=4): min=1, profit=3, max_profit=5")
+    result1 = solution.maxProfit(test1)
+    print(f"\nResult: {result1}")  # Expected: 5
+    print(f"Explanation: Buy at 1, sell at 6, profit = 5")
+    print()
+    
+    print("=" * 60)
+    print("Test 2: No profitable trades (prices decrease)")
+    print("=" * 60)
+    test2 = [7, 6, 4, 3, 1]
+    print(f"Prices: {test2}")
+    print(f"\nWalkthrough:")
+    print(f"Day 1 (price=7): min=7, profit=0, max_profit=0")
+    print(f"Day 2 (price=6): min=6, profit=0, max_profit=0")
+    print(f"Day 3 (price=4): min=4, profit=0, max_profit=0")
+    print(f"Day 4 (price=3): min=3, profit=0, max_profit=0")
+    print(f"Day 5 (price=1): min=1, profit=0, max_profit=0")
+    result2 = solution.maxProfit(test2)
+    print(f"\nResult: {result2}")  # Expected: 0
+    print(f"Explanation: No profit possible, don't trade")
+    print()
+    
+    print("=" * 60)
+    print("Test 3: Buy at start, sell at end")
+    print("=" * 60)
+    test3 = [1, 2, 3, 4, 5]
+    print(f"Prices: {test3}")
+    result3 = solution.maxProfit(test3)
+    print(f"Result: {result3}")  # Expected: 4
+    print(f"Explanation: Buy at 1, sell at 5, profit = 4")
+    print()
+    
+    print("=" * 60)
+    print("Test 4: Single day (can't trade)")
+    print("=" * 60)
+    test4 = [5]
+    print(f"Prices: {test4}")
+    result4 = solution.maxProfit(test4)
+    print(f"Result: {result4}")  # Expected: 0
+    print(f"Explanation: Need at least 2 days to trade")
+    print()
+    
+    print("=" * 60)
+    print("Test 5: Large gap profit")
+    print("=" * 60)
+    test5 = [3, 2, 6, 5, 0, 3]
+    print(f"Prices: {test5}")
+    result5 = solution.maxProfit(test5)
+    print(f"Result: {result5}")  # Expected: 4
+    print(f"Explanation: Buy at 2, sell at 6, profit = 4")
+    print(f"(Or buy at 0, sell at 3, profit = 3)")
+```
+
+---
+
+## **Pattern Template for Future Problems**
+
+```python
+"""
+PATTERN: Min/Max Tracking While Iterating
+
+Use this when:
+- Finding optimal buy/sell point
+- Finding maximum subarray sum
+- Container with most water
+- Trapping rain water
+- Any problem needing to track best value while iterating
+
+Template:
+"""
+
+def min_max_tracking_template(array):
+    """
+    Template for min/max tracking problems.
+    
+    Time: O(n)
+    Space: O(1)
+    """
+    # 1. Initialize tracking variables
+    min_val = array[0]  # or float('inf')
+    max_result = 0  # or float('-inf')
+    
+    # 2. Iterate through array
+    for val in array:
+        # 3. Update min/max if needed
+        if val < min_val:
+            min_val = val
+        
+        # 4. Calculate current result based on tracked value
+        current_result = calculate_something(val, min_val)
+        
+        # 5. Update best result if current is better
+        if current_result > max_result:
+            max_result = current_result
+    
+    # 6. Return best result
+    return max_result
+```
+

@@ -1,0 +1,80 @@
+MarshBank — Python Bank Management System
+👨‍💻 Built by: Marsh (Holyfield Nwadike)
+📖 Overview
+
+MarshBank is a simple Python-based bank management system designed to simulate how real banks handle deposits, withdrawals, transfers, and account management.
+
+It’s part of a learning journey to master Python OOP (Object-Oriented Programming) — with clear structure, clean logic, and simple interaction.
+
+⚙️ Features
+
+🆕 Create Account — Each user gets a unique 10-digit account number.
+
+💸 Deposit Money — Add funds to your account.
+
+💳 Withdraw Money — Withdraw safely with identity verification.
+
+🔁 Transfer Funds — Send money by account number or name.
+
+💰 Check Balance — View your available funds anytime.
+
+🧩 Concepts Used
+
+This project was built using:
+
+Classes & Objects
+
+Constructors (__init__)
+
+Class-level attributes
+
+Methods
+
+Data encapsulation
+
+Basic input validation
+
+Random number generation
+
+(Upcoming) Property decorators (@property, @setter)
+
+🧠 Learning Goals
+
+Understand OOP fundamentals in Python.
+
+Learn how to handle user data safely.
+
+Practice clean code and reusable design.
+
+Prepare for more advanced systems (e.g., menu-driven CLI or GUI banking app).
+
+🏗️ Next Steps
+
+Add @property and @setter for balance protection.
+
+Build a menu-driven interface so users can interact with the app using numbered options.
+
+Add transaction history and error logging.
+
+Explore saving account data to a file or database.
+
+💡 Example Run
+✅ Account created for Chris
+Account Number: 7483921035
+Balance: $1000
+
+✅ Account created for Ella
+Account Number: 2938745601
+Balance: $500
+
+Deposit in progress...
+✅ Deposit completed!
+Chris now has a total balance of $1200.
+
+✅ Transfer successful!
+Chris sent $300 to Ella.
+💰 New Balance: $900
+
+🧾 License
+
+This project is open-source and free for educational purposes under the MIT License.
